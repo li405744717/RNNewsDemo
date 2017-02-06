@@ -21,8 +21,8 @@
     "react-native-swiper": "^1.5.4",
     "react-native-tab-navigator": "^0.3.3",
     "react-native-update": "^4.0.0",
+    "react-native-video": "github:larryranches/react-native-video",
     "react-native-vector-icons": "^3.0.0",
-    "react-native-video": "^0.9.0",
     "react-native-webview2": "^1.0.4"
   },
   "devDependencies": {
