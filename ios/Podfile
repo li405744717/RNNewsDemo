@@ -1,0 +1,8 @@
+
+ use_frameworks!
+
+target ‘RNDemo’ do
+project 'RNDemo.xcodeproj'
+pod 'JTSImageViewController'
+pod 'IQKeyboardManager'
+end

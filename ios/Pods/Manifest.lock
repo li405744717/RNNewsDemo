@@ -1,0 +1,15 @@
+PODS:
+  - IQKeyboardManager (4.0.6)
+  - JTSImageViewController (1.5.1)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - JTSImageViewController
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: c52debb1967799ae7addb98eab0cf328083a874f
+  JTSImageViewController: 1f8ce1cc93dab0d0af8e53badeea7528560cfec9
+
+PODFILE CHECKSUM: f4b08e471a3a9ead83e8ee93b2de100cc5f2c14d
+
+COCOAPODS: 1.2.0
