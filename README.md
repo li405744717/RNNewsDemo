@@ -17,11 +17,12 @@ video效果<br>
 解决办法:<br>
 import \<React/RCTEventDispatcher.h\> -> #import "RCTEventDispatcher.h"<br>
 #第三库扩展<br>
-##react-native-web2<br>
-在render中添加
+##react-native-web2
+当获取网页高度之后，设置state，触发render，此时监听height，调用loaded方法关闭loadingView<br>
+在render中添加<br>
 ```JavaScripte
 if(height > 0 && !this.flag) {
             this.props.loaded()
             this.flag = true
-        }
+}
 ```
