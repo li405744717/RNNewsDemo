@@ -30,7 +30,15 @@ class Start extends Component {
   render() {
     return (
       <View style={[CommonStyles.container]}>
-        <Video source={{uri:"moments"}} repeat={false} onEnd={this.turnTab} style={styles.backgroundVideo}>
+        <Video source={require('./../assets/video/moments.mp4')}
+               repeat={false}
+               rate={1.0}                     // 0 is paused, 1 is normal.
+               volume={1.0}                   // 0 is muted, 1 is normal.
+               muted={false}                  // Mutes the audio entirely.
+               paused={false}                 // Pauses playback entirely.
+               resizeMode="cover"             // Fill the whole screen at aspect ratio.
+               onEnd={this.turnTab}
+               style={styles.backgroundVideo}>
 
         </Video>
         <View style={[CommonStyles.absolute,CommonStyles.center,styles.skipBtn]}>

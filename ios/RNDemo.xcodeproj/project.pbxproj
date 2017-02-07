@@ -37,6 +37,10 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8BC2B7A10F6B4359A0724208 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE94D5CB4E544CFCB66647C8 /* Octicons.ttf */; };
 		91E89C218B2A17A9B717C0A6 /* Pods_RNDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94A43439527F4838B28CF7A /* Pods_RNDemo.framework */; };
+		9B07E6511E499B2100D1356F /* home.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E64D1E499B2100D1356F /* home.gif */; };
+		9B07E6521E499B2100D1356F /* newsFollow.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E64E1E499B2100D1356F /* newsFollow.gif */; };
+		9B07E6531E499B2100D1356F /* newsInfo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E64F1E499B2100D1356F /* newsInfo.gif */; };
+		9B07E6541E499B2100D1356F /* start.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B07E6501E499B2100D1356F /* start.gif */; };
 		9B12B9161E26117F000EFE15 /* My_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12B9151E26117F000EFE15 /* My_View.swift */; };
 		9B12B91E1E2614D4000EFE15 /* RCTMyViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B12B91D1E2614D4000EFE15 /* RCTMyViewManager.m */; };
 		9B12B9221E262B4E000EFE15 /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B12B9211E262B4E000EFE15 /* MyView.xib */; };
@@ -353,6 +357,10 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		83BD8AB1C0F7A0C06E4DA938 /* Pods-RNDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNDemo/Pods-RNDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		953B1D7DABE94C0CBABB5735 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
+		9B07E64D1E499B2100D1356F /* home.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = home.gif; sourceTree = "<group>"; };
+		9B07E64E1E499B2100D1356F /* newsFollow.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = newsFollow.gif; sourceTree = "<group>"; };
+		9B07E64F1E499B2100D1356F /* newsInfo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = newsInfo.gif; sourceTree = "<group>"; };
+		9B07E6501E499B2100D1356F /* start.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = start.gif; sourceTree = "<group>"; };
 		9B12B9121E261156000EFE15 /* RNDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9B12B9151E26117F000EFE15 /* My_View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_View.swift; sourceTree = "<group>"; };
 		9B12B91C1E2614D4000EFE15 /* RCTMyViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTMyViewManager.h; sourceTree = "<group>"; };
@@ -654,6 +662,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9B07E64C1E499B2100D1356F /* show */,
 				9B649A151E475A610080C936 /* app */,
 				9B649A2D1E475A610080C936 /* base(公共文件) */,
 				9B649A471E475A610080C936 /* pages(页面) */,
@@ -677,6 +686,18 @@
 				00E356EE1AD99517003FC87E /* RNDemoTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9B07E64C1E499B2100D1356F /* show */ = {
+			isa = PBXGroup;
+			children = (
+				9B07E64D1E499B2100D1356F /* home.gif */,
+				9B07E64E1E499B2100D1356F /* newsFollow.gif */,
+				9B07E64F1E499B2100D1356F /* newsInfo.gif */,
+				9B07E6501E499B2100D1356F /* start.gif */,
+			);
+			name = show;
+			path = ../show;
 			sourceTree = "<group>";
 		};
 		9B12B8EF1E260E40000EFE15 /* Plugin */ = {
@@ -1428,6 +1449,7 @@
 				9B649A821E475A610080C936 /* NativeMyView.js in Resources */,
 				9B5EB2601E45C342005E36A5 /* icon_delete.png in Resources */,
 				9B12B9221E262B4E000EFE15 /* MyView.xib in Resources */,
+				9B07E6521E499B2100D1356F /* newsFollow.gif in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				9B649A7E1E475A610080C936 /* AnimatedInput.js in Resources */,
 				9B649A941E475A610080C936 /* NewsInfoContent.js in Resources */,
@@ -1436,12 +1458,14 @@
 				9B5EB2671E45C342005E36A5 /* white.png in Resources */,
 				9B649A971E475A610080C936 /* NewsInfoNav.js in Resources */,
 				9B5EB26D1E45C342005E36A5 /* moments.mp4 in Resources */,
+				9B07E6541E499B2100D1356F /* start.gif in Resources */,
 				9B649A7C1E475A610080C936 /* CommonNavBar.js in Resources */,
 				9B649A9D1E475A610080C936 /* TabBarMain.js in Resources */,
 				9B649A921E475A610080C936 /* NewsFollowVC.js in Resources */,
 				9B649A951E475A610080C936 /* NewsInfoFollowCell.js in Resources */,
 				9B649A9C1E475A610080C936 /* LiveVC.js in Resources */,
 				9B649A881E475A610080C936 /* EditView.js in Resources */,
+				9B07E6531E499B2100D1356F /* newsInfo.gif in Resources */,
 				9B649A981E475A610080C936 /* NewsInfoRelativeNewsCell.js in Resources */,
 				9B649A9F1E475A610080C936 /* TabBarView.js in Resources */,
 				9B5EB2641E45C342005E36A5 /* my.png in Resources */,
@@ -1467,6 +1491,7 @@
 				4C615F873A624BBFA649E5B0 /* MaterialIcons.ttf in Resources */,
 				9B649A9E1E475A610080C936 /* TabBarPage.js in Resources */,
 				9B649A801E475A610080C936 /* config.js in Resources */,
+				9B07E6511E499B2100D1356F /* home.gif in Resources */,
 				9B649A931E475A610080C936 /* NewsInfoCloseView.js in Resources */,
 				9B649A8F1E475A610080C936 /* NewsFollowCell2.js in Resources */,
 				9B649A8A1E475A610080C936 /* HomeList.js in Resources */,

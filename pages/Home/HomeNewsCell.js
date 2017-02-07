@@ -68,13 +68,13 @@ class HomeNewsCell extends Component {
               <Text numberOfLines={2}>{this.state.title}</Text>
               {this.state.images.length == 1 && this.state.cellType === "image" ?
                 <View style={styles.contentContainer}>
-                  <Image key={this.props.rowID+"0"}style={styles.img} source={{uri:this.state.images[0]}} onLoadStart={() => console.log("Image.onLoadStart")}></Image>
+                  <Image resizeMode="cover" key={this.props.rowID+"0"} defaultSource={require('./../../assets/images/imageLoading.jpg')} style={styles.img} source={{uri:this.state.images[0]}} onLoadStart={() => console.log("Image.onLoadStart")}></Image>
                 </View>
                 :
                 <View style={styles.contentContainer}>
-                  <Image key={this.props.rowID+"0"} style={styles.imgs} source={{uri:this.state.images[0]}}></Image>
-                  <Image key={this.props.rowID+"1"} style={styles.imgs} source={{uri:this.state.images[1]}}></Image>
-                  <Image key={this.props.rowID+"2"} style={styles.imgs} source={{uri:this.state.images[2]}}></Image>
+                  <Image resizeMode="cover" key={this.props.rowID+"0"} defaultSource={require('./../../assets/images/imageLoading.jpg')} style={styles.imgs} source={{uri:this.state.images[0]}}></Image>
+                  <Image resizeMode="cover" key={this.props.rowID+"1"} defaultSource={require('./../../assets/images/imageLoading.jpg')} style={styles.imgs} source={{uri:this.state.images[1]}}></Image>
+                  <Image resizeMode="cover" key={this.props.rowID+"2"} defaultSource={require('./../../assets/images/imageLoading.jpg')} style={styles.imgs} source={{uri:this.state.images[2]}}></Image>
                 </View>
               }
               {footView}
@@ -83,7 +83,7 @@ class HomeNewsCell extends Component {
             :
             <View style={styles.container}>
               <View style={styles.contentContainer}>
-                <Image key={this.props.rowID+"0"} style={styles.imgs} source={{uri:this.state.images[0]}}></Image>
+                <Image resizeMode="cover" key={this.props.rowID+"0"} defaultSource={require('./../../assets/images/imageLoading.jpg')} style={styles.imgs} source={{uri:this.state.images[0]}}></Image>
                 <View style={{flexDirection:"column",flex:1}}>
                   <Text numberOfLines={2} style={{flex:1,marginBottom:5}}>{this.state.title}</Text>
                   {footView}
@@ -116,12 +116,11 @@ const styles = StyleSheet.create({
   img:{
     height:100,
     width:(window.width - 20),
-    resizeMode:"cover",
+
   },
   imgs:{
     height:70,
     width:(window.width - 40) / 3,
-    resizeMode:"cover",
     marginRight:10
   },
   line:{

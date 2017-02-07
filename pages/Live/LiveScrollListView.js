@@ -23,7 +23,7 @@ class LiveScrollListView extends Component {
 
   }
   _scrollTo(x,y,animted){
-    this.refs.listView.getNativeListView().scrollTo({x:x,y:y,animated:animted})
+    this.refs.listView.scrollTo({x:x,y:y,animated:animted})
   }
 
   //

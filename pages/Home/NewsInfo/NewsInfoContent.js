@@ -2,7 +2,8 @@
  * Created by dp-k on 2016/10/27.
  */
 import React,{Component} from 'react'
-import {View, StyleSheet, Text, StatusBar , WebView, ScrollView, TouchableOpacity,findNodeHandle, PanResponder} from "react-native"
+import {View, StyleSheet, Text, StatusBar , WebView, ScrollView, InteractionManager,
+  TouchableOpacity,findNodeHandle, PanResponder} from "react-native"
 import {UIManager} from 'NativeModules'
 import Spinner from 'react-native-spinkit'
 import Web from 'react-native-webview2'
@@ -15,8 +16,8 @@ class NewsInfoContent extends Component {
   constructor(){
     super()
     this.state = {
-      webUrl:"",
-      isVisible:false,
+      webUrl:"http://www.css88.com/react/docs/getting-started.html",
+      isVisible:true,
       channel:"娱乐频道",
       closeText:"上班"
     }
@@ -74,6 +75,8 @@ class NewsInfoContent extends Component {
     // console.log("@@@@@@@@@@@")
     // this.refs.web.go("http://dnf.duowan.com")
   }
+
+  //https://github.com/li405744717/RNNewsDemo"
   render(){
     var shareView = <View style={styles.shareView}>
       <View style={styles.line}>
@@ -128,52 +131,60 @@ class NewsInfoContent extends Component {
         <NewsInfoRelativeNewsCell></NewsInfoRelativeNewsCell>
       </View>
     </View>
+    var webView = <Web
+      styles={{
+        width:window.width,
+        minHeight: 1
+      }}
+      ref = "web"
+      source={{uri:"http://dnf.duowan.com"}}
+      onNavigationStateChange = {(info) => {
+        console.log("info",info)
+        //获取高度流程：加载成功，设置height为0，获取高度，设置height为高度。
+        if (info.url.indexOf("setHeight") > 0){
 
+        }
+      }}
+      loaded = {() => {
+        this.setState({
+          isVisible:false
+        })
+      }}
+      evalReturn={this.evalReturn}
+      onLoad={() => {
+        console.log("webView onLoad")
+
+      }}
+      onError={()=>{
+        console.log("Web onError")
+      }}
+      onContentSizeChange={(e) => {
+        console.log('onContentSizeChange');
+      }}
+      onLoadStart={() => {
+        console.log("webView onLoadStart")
+
+      }}
+    >
+    </Web>
     return(
       <View style={styles.webView}>
         <ScrollView onScroll={(e) => this.changeCloseView(e)} scrollEventThrottle={1}
                     scrollEnabled={!this.state.isVisible}
                     {...this.panHandlers.panHandlers}>
-          {/*<Web*/}
-            {/*ref = "web"*/}
-            {/*source={{uri:this.state.webUrl}}*/}
-            {/*onNavigationStateChange = {(info) => {*/}
-              {/*console.log("info",info)*/}
-              {/*this.nextUrl = info.url*/}
-
-            {/*}}*/}
-            {/*onLoadEnd={() => {*/}
-              {/*this.setState({*/}
-                {/*isVisible:false*/}
-              {/*})*/}
-            {/*}}*/}
-            {/*onContentSizeChange={(e) => {*/}
-               {/*console.log('onContentSizeChange');*/}
-               {/*console.log(e);*/}
-            {/*}}*/}
-            {/*onLoadStart={() => {*/}
-              {/*this.setState({*/}
-                {/*isVisible:true*/}
-              {/*})*/}
-
-            {/*}}*/}
-          {/*>*/}
-          {/*</Web>*/}
-          {this.state.isVisible ?
-            <View style={styles.spinnerContainer}>
+          {webView}
+          <View>
+            <View style={[styles.spinnerContainer,{height:this.state.isVisible ? window.height : 0 }]}>
               <Spinner size={50} isVisible={this.state.isVisible} type="FadingCircleAlt" color="blue"></Spinner>
             </View>
-            :
-            null
-          }
+            {shareView}
+            {followView}
+            {moreNews}
+            {relativeNews}
+            <NewsInfoCloseView ref="closeView" navigator = {this.props.navigator}/>
+          </View>
           {!this.state.isVisible ?
-            <View>
-              {shareView}
-              {followView}
-              {moreNews}
-              {relativeNews}
-              <NewsInfoCloseView ref="closeView" navigator = {this.props.navigator}/>
-            </View>
+            null
               :
             null
           }
@@ -190,13 +201,12 @@ const styles = StyleSheet.create({
     backgroundColor:"whitesmoke"
   },
   spinnerContainer:{
-    position:"absolute",
+    //position:"absolute",
     height:window.height - 64 - 44,
-    top:0,
     width:window.width,
     alignItems:"center",
     justifyContent:"center",
-    backgroundColor:"white"
+    backgroundColor:"white",
   },
   shareView:{
     paddingLeft:10,
